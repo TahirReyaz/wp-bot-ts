@@ -2,7 +2,7 @@ node_modules/
 tokens/
 files/
 .idea/
-build/
+# build/
 some-file-name.jpeg
 some-file-name.jpg
 some-file-name.mp4
