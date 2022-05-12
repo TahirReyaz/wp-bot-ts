@@ -1,6 +1,6 @@
 import { Message, Whatsapp } from "venom-bot";
 
-const sendReply = (
+module.exports.sendReply = (
   client: Whatsapp,
   sender: string,
   text: string,
@@ -18,5 +18,3 @@ const sendReply = (
       console.error(errMsg, erro);
     });
 };
-
-export { sendReply };

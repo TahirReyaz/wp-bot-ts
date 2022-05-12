@@ -1,7 +1,6 @@
-// Supports ES6
-import venom from "venom-bot";
+const { default: venom, Whatsapp, Message } = require("venom-bot");
 
-import { sendReply } from "./helpers/venomFunctions";
+const { sendReply } = require("./helpers/venomFunctions");
 
 // Create the client
 venom
@@ -9,18 +8,18 @@ venom
     session: "session-name", //name of session
     multidevice: true, // for version not multidevice use false.(default: true)
   })
-  .then((client) => {
+  .then((client: typeof Whatsapp) => {
     start(client);
   })
-  .catch((error) => {
+  .catch((error: any) => {
     console.log(error);
     console.log("ERROR OCCURED");
   });
 let RecievedMsgPermission = false;
 // Start the client
-function start(client: venom.Whatsapp) {
+function start(client: typeof Whatsapp) {
   // This function executes whenever a message is sent or recieved
-  client.onAnyMessage((message) => {
+  client.onAnyMessage((message: typeof Message) => {
     // variables and constants required to make the data readable
     const data = message.body;
     const botQuery = data.split(" ");
